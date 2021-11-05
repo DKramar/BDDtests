@@ -8,7 +8,10 @@ public class LoginPageMethods extends BaseTest {
   private final By instructorCenterPageText =
       By.xpath("//*[contains(text(),'Instructor Center Logo: Link to Home Page')]");
   private final By signInButton = By.id("login-home-button");
-  private final By octaPageText = By.className("okta-sign-in-header auth-header");
+
+  // TODO: ругается на то, что ты ищешь по классу, а он должен быть только одним словом и
+  //  посмотри в сторону пейджобжектов, потому что это все равно не очень красиво)
+  private final By octaPageText = By.id("okta-sign-in");
   private final By userEmailField = By.id("idp-discovery-username");
   private final By nextButton = By.id("idp-discovery-submit");
   private final By passwordField = By.id("okta-signin-password");

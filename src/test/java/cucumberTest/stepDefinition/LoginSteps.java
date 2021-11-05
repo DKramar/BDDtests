@@ -1,13 +1,14 @@
 package cucumberTest.stepDefinition;
 
-import cucumber.annotation.en.Given;
-import cucumber.annotation.en.When;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
+import cucumberTest.base.BaseTest;
 import cucumberTest.methods.LoginPageMethods;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class LoginSteps {
+public class LoginSteps extends LoginPageMethods {
   LoginPageMethods loginPageMethods = new LoginPageMethods();
 
   @Given("Instructor Center page is displayed")
@@ -28,15 +29,11 @@ public class LoginSteps {
         "okta-sign-in-header auth-header", loginPageMethods.verifyOKTAPageElement());
   }
 
-  @And("User enters UserName")
-  public void userEntersUserName() {
-    loginPageMethods.enterUserEmail("fx.test.instructor6@fauxuni.edu");
+  @And("User enters {string} and {string}")
+  public void userEnters(String userName, String password) {
+    loginPageMethods.enterUserEmail(userName);
     loginPageMethods.clickOnNextButton();
-  }
-
-  @And("User enters Password")
-  public void UserEntersPassword() {
-    loginPageMethods.enterPassword("Cengage27");
+    loginPageMethods.enterPassword(password);
     loginPageMethods.clickOnSubmitButton();
   }
 

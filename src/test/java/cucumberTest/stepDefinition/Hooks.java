@@ -16,7 +16,8 @@ public class Hooks extends BaseTest {
   public void beforeScenario() {
     System.setProperty(
         "webdriver.chrome.driver",
-        "D:\\Java-education-for-qa\\Student\\GchDriver\\chrome94\\chromedriver.exe");
+        "src\\main\\resources\\drivers\\chromedriver_95_0_4638_54.exe");
+
     driver = new ChromeDriver();
     capabilities.setJavascriptEnabled(true);
     driver.manage().deleteAllCookies();

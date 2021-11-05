@@ -2,15 +2,14 @@
 Feature: Login Action
 
   @LogIn
-  Scenario Outline: Successful Login with Valid Credentials
+  Scenario: Successful Login with Valid Credentials
     Given Instructor Center page is displayed
     When User Navigates to SignIn button and click on it
     Then Okta page is displayed
-    And User enters UserName
-    And User enters Password
+    And User enters "fx.test.instructor6@fauxuni.edu" and "Cengage27"
     Then FX dashboard page is displayed
 
-    Examples:
+#    Examples:
 
 
 #  Given defines a precondition to the test. For e.g. In the shopping website, assume that the LogIn page link is only
